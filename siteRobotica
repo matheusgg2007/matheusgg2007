@@ -1,0 +1,57 @@
+@matheusgg2007
+
+
+html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ROBÓTICA METERIOLOGIA</title>
+  <style>
+      /* Seu CSS vai aqui */
+  </style>
+</head>
+<body>
+  <h1>Welcome to ROBÓTICA METERIOLOGIA</h1>
+  <button id="option1">Opção 1</button>
+  <button id="option2">Opção 2</button>
+  <button id="option3">Opção 3</button>
+  <button id="option4">Opção 4</button>
+  <button id="voltar">Voltar</button>
+  <script src="script.js"></script>
+</body>
+</html>
+
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Criar conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Verificar conexão
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT column1, column2, column3, column4 FROM tableName"; // Substitua pelo seu comando SQL
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    echo "column1: " . $row["column1"]. " - column2: " . $row["column2"]. "<br>"; // Edite para combinar com suas colunas
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?>
+
+javascript
+document.getElementById("option1").addEventListener("click", function() {
+    // Fazer algo quando a Opção 1 é clicada
+});
+
+document.getElementById("voltar").addEventListener("click", function() {
+    // Fazer algo quando o botão Voltar é clicado
+});
